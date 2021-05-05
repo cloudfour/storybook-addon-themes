@@ -37,6 +37,11 @@ export const ThemeStory: React.FC<Props> = (props) => {
         break;
     }
 
+    // Prevents rapid reloads from breaking Storybook UI
+    if (!targetEl || !targetEl.classList) {
+      return null;
+    }
+
     // Add selected theme class(es).
     if (selectedTheme && selectedTheme.class) {
       if (typeof selectedTheme.class === 'string') {
