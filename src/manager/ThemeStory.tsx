@@ -18,7 +18,7 @@ export const ThemeStory: React.FC<Props> = (props) => {
     let targetEl: HTMLElement;
     const iframe = document.getElementById(iframeId);
     if (!iframe) {
-      return null;
+      return;
     }
 
     const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
@@ -39,7 +39,7 @@ export const ThemeStory: React.FC<Props> = (props) => {
 
     // Prevents rapid reloads from breaking Storybook UI
     if (!targetEl || !targetEl.classList) {
-      return null;
+      return;
     }
 
     // Add selected theme class(es).
@@ -62,5 +62,5 @@ export const ThemeStory: React.FC<Props> = (props) => {
       });
   });
 
-  return null;
+  return;
 }
